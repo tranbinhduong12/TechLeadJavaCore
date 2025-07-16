@@ -8,6 +8,7 @@ public class MenuController {
     private final Level1Exercise level1 = new Level1Exercise();
     private final Level2Exercise level2 = new Level2Exercise();
     private final Level3Exercise level3 = new Level3Exercise();
+    private final Level4Exercise level4 = new Level4Exercise();
 
     public void start() {
         Scanner sc = new Scanner(System.in);
@@ -27,6 +28,7 @@ public class MenuController {
                 case 1 -> showLeve1Menu(sc);
                 case 2 -> showLevel2Menu(sc);
                 case 3 -> showLevel3Menu(sc);
+                case 4 -> showLevel4Menu(sc);
                 case 0 -> {
                     System.out.println("goodbye");
                     return;
@@ -129,5 +131,37 @@ public class MenuController {
                 default -> System.out.println("invalid choice");
         }
     }
+    }
+
+    private void showLevel4Menu(Scanner sc) {
+        while (true) {
+            System.out.println("\n--- LEVEL 4 MENU ---");
+            System.out.println("1. Bubble sort iteration count");
+//            System.out.println("2. Count subsequences summing to target [BỎ]");
+            System.out.println("3. Longest common substring among all strings");
+//            System.out.println("4. Max subarray sum with no consecutive integers [BỎ]");
+//            System.out.println("5. Longest common substring (generalized) [BỎ]");
+            System.out.println("6. Max product of any 3 distinct elements");
+            System.out.println("7. Sort strings by distinct word count and length");
+//            System.out.println("8. Smallest unrepresentable sum (no consecutive) [BỎ]");
+            System.out.println("9. LIS with adjacent diff ≤ 1");
+//            System.out.println("10. Most overlapping substrings of length ≥ k [BỎ]");
+            System.out.println("0. Back to main menu");
+            System.out.print("Choose an exercise: ");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+                case 1 -> level4.countBubbleSort();
+                case 3 -> level4.findLongestSubStr();
+                case 6 -> level4.maxProductOfThree();
+                case 7 -> level4.sortStrByWord();
+                case 9 -> level4.findLongestSubNum();
+                case 0 -> {
+                    return;
+                }
+                default -> System.out.println("invalid choice");
+            }
+        }
     }
 }
