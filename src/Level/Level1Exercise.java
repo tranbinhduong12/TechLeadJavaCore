@@ -1,9 +1,9 @@
-package Level1;
+package Level;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Lv1Exercuse {
+public class Level1Exercise {
     Scanner sc = new Scanner(System.in);
     //1.1 tính tổng 2 số
     public void sumNumber() {

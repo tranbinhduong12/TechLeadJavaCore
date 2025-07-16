@@ -1,11 +1,12 @@
 package Menu;
 
-import Level1.Lv1Exercuse;
+import Level.*;
 
 import java.util.Scanner;
 
 public class MenuController {
-    private final Lv1Exercuse level1 = new Lv1Exercuse();
+    private final Level1Exercise level1 = new Level1Exercise();
+    private final Level2Exercise level2 = new Level2Exercise();
 
     public void start() {
         Scanner sc = new Scanner(System.in);
@@ -23,6 +24,7 @@ public class MenuController {
 
             switch (level) {
                 case 1 -> showLeve1Menu(sc);
+                case 2 -> showLevel2Menu(sc);
                 case 0 -> {
                     System.out.println("goodbye");
                     return;
@@ -62,5 +64,35 @@ public class MenuController {
             case 9 -> level1.countWords();
             case 10 -> level1.sortStringAlphabet();
         }
+    }
+
+    private void showLevel2Menu(Scanner sc) {
+        while (true) {
+            System.out.println("\n--- LEVEL 2 ---");
+            System.out.println("1. Find second largest number");
+            System.out.println("2. Find longest word");
+            System.out.println("3. Longest common subsequence");
+            System.out.println("4. Sum of numbers divisible by 3 and 5");
+            System.out.println("5. Maximum sum of contiguous subarray");
+            System.out.println("0. Back to main menu");
+            System.out.print("Choose an exercise: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine(); // clear buffer
+
+            switch (choice) {
+                case 1 -> level2.findSecondMax();
+                case 2 -> level2.findLongestWord();
+                case 3 -> level2.findLongestSubStr();
+                case 4 -> level2.sumDivisibleByThreeAndFive();
+                case 5 -> level2.maxSubSum();
+                case 0 -> {
+                    return;
+                }
+                default -> System.out.println("invalid choice");
+            }
+        }
+
+
     }
 }
