@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MenuController {
     private final Level1Exercise level1 = new Level1Exercise();
     private final Level2Exercise level2 = new Level2Exercise();
+    private final Level3Exercise level3 = new Level3Exercise();
 
     public void start() {
         Scanner sc = new Scanner(System.in);
@@ -25,6 +26,7 @@ public class MenuController {
             switch (level) {
                 case 1 -> showLeve1Menu(sc);
                 case 2 -> showLevel2Menu(sc);
+                case 3 -> showLevel3Menu(sc);
                 case 0 -> {
                     System.out.println("goodbye");
                     return;
@@ -93,6 +95,39 @@ public class MenuController {
             }
         }
 
+    }
 
+    private void showLevel3Menu(Scanner sc) {
+        while(true) {
+            System.out.println("\n--- LEVEL 3 MENU ---");
+            System.out.println("1. Find second smallest number");
+            System.out.println("2. Find maximum difference");
+            System.out.println("3. Longest increasing subsequence");
+            System.out.println("4. Two strings with most overlapping characters");
+            System.out.println("5. Smallest unrepresentable positive integer");
+            System.out.println("6. Median of two integer arrays");
+            System.out.println("7. Length of longest rearranged palindrome");
+            System.out.println("8. Sort strings by distinct character count");
+            System.out.println("0. Back to main menu");
+            System.out.print("Choose an exercise: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine();// clear buffer
+
+            switch(choice) {
+                case 1 -> level3.findMinSecond();
+                case 2 -> level3.finMaxDifference();
+                case 3 -> level3.findLongestIncreaseSub();
+                case 4 -> level3.findMostOverlap();
+                case 5 -> level3.findSmallestNumber();
+                case 6 -> level3.findMedianOfTwoArr();
+                case 7 -> level3.longestRearrang();
+                case 8 -> level3.sortString();
+                case 0 -> {
+                    return;
+            }
+                default -> System.out.println("invalid choice");
+        }
+    }
     }
 }
