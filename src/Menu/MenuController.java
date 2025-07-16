@@ -9,6 +9,7 @@ public class MenuController {
     private final Level2Exercise level2 = new Level2Exercise();
     private final Level3Exercise level3 = new Level3Exercise();
     private final Level4Exercise level4 = new Level4Exercise();
+    private final Level5Exercise level5 = new Level5Exercise();
 
     public void start() {
         Scanner sc = new Scanner(System.in);
@@ -29,6 +30,7 @@ public class MenuController {
                 case 2 -> showLevel2Menu(sc);
                 case 3 -> showLevel3Menu(sc);
                 case 4 -> showLevel4Menu(sc);
+                case 5 -> showLevel5Menu(sc);
                 case 0 -> {
                     System.out.println("goodbye");
                     return;
@@ -157,6 +159,38 @@ public class MenuController {
                 case 6 -> level4.maxProductOfThree();
                 case 7 -> level4.sortStrByWord();
                 case 9 -> level4.findLongestSubNum();
+                case 0 -> {
+                    return;
+                }
+                default -> System.out.println("invalid choice");
+            }
+        }
+    }
+
+    private void showLevel5Menu(Scanner sc) {
+        while (true) {
+            System.out.println("\n--- LEVEL 5 MENU ---");
+            System.out.println("1. Reverse array (no built-in reverse)");
+            System.out.println("2. Chunk array into subarrays");
+            System.out.println("3. Remove duplicate values (uniq)");
+            System.out.println("4. Remove duplicate objects (uniq objects)"); // chưa làm
+            System.out.println("5. Group array of objects by field"); // chưa làm
+            System.out.println("6. Trim all spaces (single space between words)");
+            System.out.println("7. Map object fields to given key order"); // chưa làm
+            System.out.println("8. Switch order of objects by ID"); // copy chat gpt
+            System.out.println("9. Sum all key values in object array");// copy chat gpt
+            System.out.println("0. Back to main menu");
+            System.out.print("Choose an exercise: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine();// clear buffer
+            switch (choice) {
+                case 1 -> level5.reverseArr();
+                case 2 -> level5.chunkArray();
+                case 3 -> level5.chunkArray();
+                case 6 -> level5.trimStr();
+                case 8 -> level5.switchOrder();
+                case 9 -> level5.sumAll();
                 case 0 -> {
                     return;
                 }
